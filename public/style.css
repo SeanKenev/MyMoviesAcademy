@@ -1,57 +1,99 @@
+/* style.css - responsive styles for MyMoviesAcademy */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #1a1a1a;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  font-family: Inter, Arial, sans-serif;
+  background: #f5f6f8;
+  color: #222;
+  line-height: 1.4;
 }
 
-.container {
-    background: #262626;
-    padding: 25px;
-    border-radius: 10px;
-    width: 420px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+/* NAV */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: #0f1724;
+  color: #fff;
+}
+.logo { font-weight: 700; font-size: 20px; color: #ffc857; }
+.navbar nav a { color: #d1d5db; text-decoration: none; margin-left: 14px; }
+.navbar nav a.active, .navbar nav a:hover { color: #fff; }
+
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(180deg, rgba(15,23,36,0.8), rgba(15,23,36,0.6)), url('https://via.placeholder.com/1400x400') center/cover no-repeat;
+  color: #fff;
+}
+.hero-inner { max-width: 900px; }
+.hero .btn {
+  background: #ff4747;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 16px;
 }
 
-h1 {
-    color: #ffcc00;
-    margin-bottom: 15px;
-}
+/* PAGE WRAP */
+.page-wrap { max-width: 1100px; margin: 24px auto; padding: 0 18px; }
 
-input, button {
-    padding: 10px;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
+/* Add form */
+.add-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
 }
+.add-form input { padding: 10px; border-radius: 6px; border: 1px solid #ddd; }
+.add-form button { padding: 10px; background: #1f7a8c; color: white; border: none; border-radius: 6px; cursor: pointer; }
 
-input {
-    width: 80%;
+/* Movie grid */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
 }
-
-button {
-    background-color: #ffcc00;
-    color: #000;
-    font-weight: bold;
-    cursor: pointer;
+.movie-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(15,23,36,0.06);
+  cursor: pointer;
+  transition: transform .18s ease;
 }
+.movie-card:hover { transform: translateY(-6px); }
+.movie-card img { width: 100%; height: 260px; object-fit: cover; display: block; }
+.movie-card h3 { padding: 12px; font-size: 16px; text-align: center; }
 
-button:hover {
-    background-color: #ffd633;
+/* Movie details */
+.movie-details { display: grid; gap: 16px; grid-template-columns: 1fr; background: #fff; padding: 18px; border-radius: 10px; box-shadow: 0 6px 20px rgba(15,23,36,0.06); }
+.movie-details img { width: 100%; height: auto; border-radius: 8px; }
+.movie-details h2 { margin-top: 8px; color: #0f1724; }
+.movie-details p { color: #374151; }
+
+/* Login */
+.login-container {
+  background: #fff;
+  padding: 22px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(15,23,36,0.06);
+  max-width: 420px;
+  margin: 36px auto;
 }
+.login-container input { width: 100%; padding: 12px; margin: 8px 0; border-radius: 8px; border: 1px solid #e5e7eb; }
+.login-container button { width: 100%; padding: 12px; background: #0f7a6c; color: #fff; border: none; border-radius: 8px; cursor: pointer; }
 
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-li {
-    background: #333333;
-    margin: 5px 0;
-    padding: 8px;
-    border-radius: 5px;
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .hero { padding: 48px 12px; }
+  .movie-card img { height: 200px; }
 }

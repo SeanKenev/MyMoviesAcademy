@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Movies | MyMoviesAcademy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">MyMoviesAcademy</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="movies.html" class="active">Movies</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-wrap">
+      <h2 class="page-title">Available Movies</h2>
+
+      <!-- simple add-movie form -->
+      <form id="addMovieForm" class="add-form">
+        <input type="text" id="title" placeholder="Title (required)" required />
+        <input type="text" id="genre" placeholder="Genre" />
+        <input type="number" id="year" placeholder="Year" />
+        <input type="text" id="poster" placeholder="Poster URL (optional)" />
+        <input type="text" id="description" placeholder="Short description (optional)" />
+        <button type="submit">Add Movie</button>
+      </form>
+
+      <div class="movie-grid" id="movieList"></div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
