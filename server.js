@@ -1,31 +1,30 @@
-// server.js
-const express = require('express');
-const mongoose = require('mongoose');
-const path = require('path');
+const express = require("express");
+const path = require("path");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
-app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve frontend
+app.use(express.static(path.join(__dirname, "public")));
 
-// connect to local mongodb
-mongoose.connect('mongodb://localhost:27017/mymoviesacademy', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log('✅ Connected to MongoDB'))
-.catch(err => console.error('❌ MongoDB error:', err));
-
-// routes
-const moviesRouter = require('./routes/movies');
-app.use('/movies', moviesRouter);
-
-// optional explicit homepage route
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+// Dummy API endpoint (placeholder for real movie API)
+app.get("/api/movies", (req, res) => {
+    res.json({
+        banner: {
+            title: "Featured Movie Title",
+            description: "This is a placeholder synopsis loaded dynamically from an API.",
+            meta: ["Action", "2025", "2h 10m", "⭐ 8.5"]
+        },
+        sections: {
+            recentlyUpdated: Array(8).fill({}),
+            trending: Array(10).fill({}),
+            newMovies: Array(10).fill({}),
+            newSeries: Array(10).fill({}),
+            recommended: Array(10).fill({})
+        }
+    });
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 MyMoviesAcademy running at http://localhost:${PORT}`);
+    console.log(`Server running at http://localhost:${PORT}`);
 });
