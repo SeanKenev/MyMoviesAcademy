@@ -1,81 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MyMoviesAcademy</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Movie Browser</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- NAVBAR -->
-<header class="navbar">
-    <div class="logo">MyMoviesAcademy</div>
+  <h1>🎬 Movie Browser</h1>
 
-    <nav>
-        <a class="active">Home</a>
-        <a>Genre ▾</a>
-        <a>Country ▾</a>
-        <a>Movies</a>
-        <a>Series</a>
-        <a>Animation</a>
-    </nav>
+  <div id="movies" class="movie-container"></div>
 
-    <div class="nav-right">
-        <input type="text" placeholder="Search...">
-        <button class="login-btn">Login</button>
-        <button class="signup-btn">Sign Up</button>
-    </div>
-</header>
-
-<!-- HERO / BANNER -->
-<section class="hero">
-    <div class="hero-overlay">
-        <h1 id="bannerTitle">Movie Title</h1>
-
-        <div class="meta" id="bannerMeta"></div>
-
-        <p id="bannerDesc">
-            Placeholder description pulled dynamically from API.
-        </p>
-
-        <div class="hero-buttons">
-            <button class="watch">▶ Watch Now</button>
-            <button class="later">＋ Watch Later</button>
-        </div>
-    </div>
-</section>
-
-<!-- CONTENT SECTIONS -->
-<div class="content">
-
-    <section>
-        <h2>Recently Updated</h2>
-        <div class="row" id="recent"></div>
-    </section>
-
-    <section>
-        <h2>Trending</h2>
-        <div class="row" id="trending"></div>
-    </section>
-
-    <section>
-        <h2>New Release – Movies</h2>
-        <div class="row" id="movies"></div>
-    </section>
-
-    <section>
-        <h2>New Release – Series</h2>
-        <div class="row" id="series"></div>
-    </section>
-
-    <section>
-        <h2>Recommended</h2>
-        <div class="row" id="recommended"></div>
-    </section>
-
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

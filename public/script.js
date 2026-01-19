@@ -1,28 +1,22 @@
-fetch("/api/movies")
-    .then(res => res.json())
-    .then(data => {
+const API_KEY = "109fb2153399ce7f24bd49347fbf0e4c";
+const BASE_URL = "https://api.themoviedb.org/3";
+const IMAGE_URL = "https://image.tmdb.org/t/p/w500";
 
-        document.getElementById("bannerTitle").textContent = data.banner.title;
-        document.getElementById("bannerDesc").textContent = data.banner.description;
+const moviesContainer = document.getElementById("movies");
 
-        data.banner.meta.forEach(m => {
-            const span = document.createElement("span");
-            span.textContent = m;
-            document.getElementById("bannerMeta").appendChild(span);
-        });
+fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}`)
+  .then(response => response.json())
+  .then(data => {
+    data.results.forEach(movie => {
+      const movieDiv = document.createElement("div");
+      movieDiv.classList.add("movie");
 
-        function fillRow(id, count) {
-            const row = document.getElementById(id);
-            for (let i = 0; i < count; i++) {
-                const card = document.createElement("div");
-                card.className = "card";
-                row.appendChild(card);
-            }
-        }
+      movieDiv.innerHTML = `
+        <img src="${IMAGE_URL + movie.poster_path}" alt="${movie.title}">
+        <h3>${movie.title}</h3>
+      `;
 
-        fillRow("recent", 8);
-        fillRow("trending", 10);
-        fillRow("movies", 10);
-        fillRow("series", 10);
-        fillRow("recommended", 10);
+      moviesContainer.appendChild(movieDiv);
     });
+  })
+  .catch(error => console.error("Error fetching movies:", error));
