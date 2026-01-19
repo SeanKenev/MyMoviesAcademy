@@ -1,16 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Movie Browser</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyMoviesAcademy | Home</title>
+
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>🎬 Movie Browser</h1>
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <h1 class="logo">MyMoviesAcademy</h1>
 
-  <div id="movies" class="movie-container"></div>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="movies.html">Movies</a>
+    <a href="login.html">Login</a>
+  </nav>
+</header>
 
-  <script src="script.js"></script>
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-overlay">
+    <h2>Trending Movies</h2>
+    <p>Explore popular movies updated in real time.</p>
+  </div>
+</section>
+
+<!-- ================= MOVIE SECTION ================= -->
+<main class="content">
+
+  <h2 class="section-title">Popular Right Now</h2>
+
+  <!-- ⚠️ DO NOT CHANGE THIS ID -->
+  <div id="movies" class="movie-container">
+    <!-- Movie posters + titles are injected here by script.js -->
+  </div>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <p>© 2026 MyMoviesAcademy</p>
+</footer>
+
+<!-- ================= SCRIPT ================= -->
+<script src="script.js"></script>
+
 </body>
 </html>
